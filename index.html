@@ -13,27 +13,26 @@
     <title>Captain Planet</title>
 </head>
 <body>
+    <!-- Game Title -->
     <div class="game-banner">
         <header>
             <h1>Captain Planet</h1>
         </header>
+            <!-- Game buttons -->
             <div class="how-to-play">
-                <!-- Trigger the modal with a button -->
                 <button data-toggle="modal" data-target="#myModal">How to play</button>
-
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-
                     <!-- Modal content-->
                     <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">How to play</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Captain Planet is a two player game. Each player will play through the game once until a winner is decided!</p>
-                        <p>Debris will fall from the top and its up to the user to match the debris with the correct bin to place the debris in.</p>
+                        <p>Captain Planet is a two player game. Each player will play through the game once.</p>
+                        <p>Debris will fall from the top and its up to the player to match the debris with the correct bin to place the debris in.</p>
                         <p>Five rounds at one minute each. Increase in falling debris each round.</p>
                         <p>Round is over when all debris has been sorted or time has run out or three pieces of debris have either been missorted or fallen to the ground.</p>
                     </div>
@@ -48,9 +47,9 @@
                 <button id="startSorting">Start sorting</button>
             </div>
     </div>
-
+    <!-- Bin containers -->
     <div class="container">
-        <div class="row">
+        <div class="row center">
             <div class="col-md-4">
                     <div class="compost"></div>
             </div>

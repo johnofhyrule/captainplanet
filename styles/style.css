@@ -1,3 +1,28 @@
 body {
     background-color: whitesmoke;
 }
+
+h1  {
+    font-family: 'Bangers', cursive;
+    color: orangered;
+    font-size: 72px;
+}
+
+.compost {
+    width: 100px; 
+    height: 150px; 
+    /* border: 1px solid #000; */
+    background-color: #65ae43;
+}
+.trash {
+    width: 100px; 
+    height: 150px; 
+    /* border: 1px solid #000; */
+    background-color: #000;
+}
+.recycle {
+    width: 100px; 
+    height: 150px; 
+    /* border: 1px solid #000; */
+    background-color: #316cb0;
+}

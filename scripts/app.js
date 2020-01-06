@@ -1,4 +1,4 @@
-// -------- Core Moduels -------- //
+// -------- Core Modules -------- //
 
 // -------- Third Party Libraries -------- //
 

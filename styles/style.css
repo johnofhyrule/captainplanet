@@ -18,6 +18,16 @@ h3 {
     text-align: center;
 }
 
+#scoreboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    font-family: 'Bangers', cursive;
+    position: fixed;
+}
+
 .game-buttons {
     display: flex;
     flex-direction: row;
@@ -63,6 +73,7 @@ h3 {
     width: 100vw;
 }
 
+/* Override @media as it was setting .container to a fix width */
 @media (min-width: 768px) {
 .container, .container-md, .container-sm {
         max-width: 100%;

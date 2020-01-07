@@ -9,6 +9,11 @@ h1  {
     font-size: 96px;
 }
 
+h3 {
+    display: flex;
+    justify-content: right;
+}
+
 .game-banner {
     text-align: center;
 }
@@ -22,6 +27,7 @@ h1  {
 }
 
 .how-to-play {
+    font-family: 'Bangers', cursive;
     border: 1px solid black;
     border-radius: 2px;
     background-color: rgb(0, 0, 0);
@@ -31,7 +37,13 @@ h1  {
     margin: 5px;
 }
 
+.modal-body p {
+    text-align: left;
+    font-family: 'Bangers', cursive;
+}
+
 .play {
+    font-family: 'Bangers', cursive;
     border: 1px solid black;
     border-radius: 2px;
     text-align: center;
@@ -39,28 +51,6 @@ h1  {
     cursor: pointer;
     margin: 5px;
 }
-
-.circle {
-    width: 75px;
-    height: 75px;
-    background: #316cb0;
-    border-radius: 50%
-}
-
-.rectangle {
-    width: 60px;
-    height: 100px;
-    background: #000;
-    border-radius: 10%;
-  }
-
-  .rupee {
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 80px solid #65ae43;
-  }
 
 .container {
     display: flex;
@@ -119,9 +109,4 @@ h1  {
     height: 150px; 
     border: .5px solid #000;
     background-color: #316cb0;
-}
-
-.modal-body p {
-    text-align: left;
-    font-family: Helvetica, sans-serif;
 }

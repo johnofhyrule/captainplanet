@@ -13,20 +13,82 @@ h1  {
     text-align: center;
 }
 
+.game-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.how-to-play {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: coral;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.how-to-play:hover {
+    background-color: darkgray;
+}
+
+.play {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: coral;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.play:hover {
+    background-color: darkgray;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    /* align-items: center; */
     position: fixed;
     bottom: 0;
+    width: 100vw;
+}
+
+@media (min-width: 768px) {
+.container, .container-md, .container-sm {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+.container, .container-sm {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+.container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+.container {
+        max-width: 100%;
+    }
 }
 
 .compost {
     margin: auto;
     width: 100px; 
     height: 150px; 
-    border: 1px solid #000;
+    border: .5px solid #000;
     background-color: #65ae43;
 }
 
@@ -34,7 +96,7 @@ h1  {
     margin: auto;
     width: 100px; 
     height: 150px; 
-    border: 1px solid #000;
+    border: .5px solid #000;
     background-color: #000;
 }
 
@@ -42,12 +104,8 @@ h1  {
     margin: auto;
     width: 100px; 
     height: 150px; 
-    border: 1px solid #000;
+    border: .5px solid #000;
     background-color: #316cb0;
-}
-
-.modal-header {
-    text-align: left;
 }
 
 .modal-body p {

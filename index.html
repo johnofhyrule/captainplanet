@@ -18,7 +18,16 @@
         <header>
             <h1>Captain Planet</h1>
         </header>
+    <!-- Scoreboard -->
+    <!-- Scoreboard should surface when  user taps Start sorting button-->
+    <!-- Scoreboard should be opaque when game is in play -->
+    <!-- <div class="col-md-4">
+            <h3>Scoreboard: 0</h3>
+            <span id="timer">Timer: 30s</span>
+            <span id="round">Round: 1</span>
+        </div> -->
             <!-- Game buttons -->
+        <div class="game-buttons">
             <div class="how-to-play">
                 <button data-toggle="modal" data-target="#myModal">How to play</button>
                 <!-- Modal -->
@@ -46,10 +55,11 @@
             <div class="play">
                 <button id="startSorting">Start sorting</button>
             </div>
+        </div>
     </div>
     <!-- Bin containers -->
     <div class="container">
-        <div class="row center">
+        <div class="row">
             <div class="col-md-4">
                     <div class="compost"></div>
             </div>
@@ -60,10 +70,8 @@
                     <div class="recycle"></div>
             </div>
         </div>
-      </div>
-
-
-
+    </div>
+      
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

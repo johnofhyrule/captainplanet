@@ -8,7 +8,7 @@ console.log("This is the way");
 // -------- Constants (variables) -------- //
 
 // -------- Event Listners -------- //
-$('button').on('click',() => {
+$('#startSorting').on('click',() => {
     console.log('Game Start');
     setUpRound();
     setTimer();
@@ -16,7 +16,6 @@ $('button').on('click',() => {
 
 // -------- Game Logic -------- //
 let score = 0;
-
 let time = 0;
 let round = 1;
 
@@ -35,7 +34,7 @@ function hideBanner() {
     //showScoreboard // have to show scoreboard at the same time function is below
   }
 
-// -------- Hide Scoreboard and Show Scoreboard -------- //
+// -------- Scoreboard Hidden and Show Scoreboard -------- //
 const hideScoreboard = document.getElementById("scoreboard").style.display = "none";
     gameStart.addEventListener("click", showScoreboard);
 
@@ -49,22 +48,23 @@ function showScoreboard() {
   }
 
 // -------- Create/Randomize Falling Debris -------- //
-const creatDebris = numberOfDebris => {
-    const $debris = $('.debris');
-    for (let i = 0; i < numberOfDebris; i++) {
-        const $debris = $('<div class ="debris"/>');
-        
+function randomDebris (min, max) {
+    return Math.round(Math.random() * (max-min) + min);
+}
+
+function setBackground () {
+    if (Math.round(Math.random())){
+        return 
     }
 }
 
-const createSqaures = numberOfSqaures => {
-    const $squares = $('.squares');  // loading for reference later
-    for (let i = 1; i < numberOfSqaures; i++) {
-        const $square = $('<div class ="square"/>')
-        $square.css('background-color', applyRandomColor()); // method that takes in two arguments
-        $squares.append($square); // variable is just sitting there
-    }
-}
+// const createDebris = numberOfDebris => {
+//     const $debrisTrio = $('.debris');
+//     for (let i = 0; i < numberOfDebris; i++) {
+//         const $debris = $('<div class ="debris"/>');
+//         $debrisTrio.append($debris);
+//     }
+// }
 
 // -------- Timer Function -------- //
 const setTimer = () => {

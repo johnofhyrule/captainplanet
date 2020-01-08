@@ -48,23 +48,35 @@ function showScoreboard() {
   }
 
 // -------- Create/Randomize Falling Debris -------- //
-function randomDebris (min, max) {
-    return Math.round(Math.random() * (max-min) + min);
-}
+const hideDebris = document.querySelector(".debris").style.display = "none";
+    gameStart.addEventListener("click", showDebris);
 
-function setBackground () {
-    if (Math.round(Math.random())){
-        return 
+function showDebris() {
+    var x = document.querySelector(".debris");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
     }
-}
+  }
+// function create array of three objects setInterval
 
-// const createDebris = numberOfDebris => {
-//     const $debrisTrio = $('.debris');
-//     for (let i = 0; i < numberOfDebris; i++) {
-//         const $debris = $('<div class ="debris"/>');
-//         $debrisTrio.append($debris);
-//     }
-// }
+// var createDebris = document.getElementsByClassName('fas fa-recycle', 'fas fa-apple-alt', 'fas fa-trash');
+// var fallingDebris = Array.prototype.filter.call(createDebris, function(createDebris) {
+//     return createDebris.nodeName === 'class';
+// });
+
+// console.log(createDebris);
+
+let debrisArray  = [
+    (.fas fa-recycle),
+    (.fas fa-apple-alt),
+    (.fas fa-trash)
+];
+
+console.log(debrisArray);
+
+
 
 // -------- Timer Function -------- //
 const setTimer = () => {
@@ -101,12 +113,9 @@ const setUpRound = () => {
         // createDebris(40);
         time =30;
     } else {
+        // Create banner for player one and player two score
         $('h3').text(`GAME OVER score: ${score}`);
     }
 }
 
 // -------- App State -------- //
-
-// -------- Functions -------- //
-
-// -------- Event Listners -------- //

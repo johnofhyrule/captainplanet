@@ -8,11 +8,23 @@ console.log("This is the way");
 // -------- Constants (variables) -------- //
 
 // -------- Event Listners -------- //
+// Event listener to start game (remove banner, show scoreboard, and have debris fall)
 $('#startSorting').on('click',() => {
     console.log('Game Start');
     setUpRound();
     setTimer();
 });
+
+// Event listener for selecting bins
+$('.compost').on('click',() => {
+    console.log('compost');
+})
+$('.trash').on('click',() => {
+    console.log('trash');
+})
+$('.recycle').on('click',() => {
+    console.log('recycle');
+})
 
 // -------- Game Logic -------- //
 let score = 0;
@@ -47,7 +59,7 @@ function showScoreboard() {
     }
   }
 
-// -------- Create/Randomize Falling Debris -------- //
+// -------- Hide/Create/Randomize Falling Debris -------- //
 const hideDebris = document.querySelector(".debris").style.display = "none";
     gameStart.addEventListener("click", showDebris);
 
@@ -61,20 +73,14 @@ function showDebris() {
   }
 // function create array of three objects setInterval
 
-// var createDebris = document.getElementsByClassName('fas fa-recycle', 'fas fa-apple-alt', 'fas fa-trash');
-// var fallingDebris = Array.prototype.filter.call(createDebris, function(createDebris) {
-//     return createDebris.nodeName === 'class';
-// });
-
-// console.log(createDebris);
-
 let debrisArray  = [
-    (.fas fa-recycle),
-    (.fas fa-apple-alt),
-    (.fas fa-trash)
+    ".fa-recycle",
+    ".fa-apple-alt",
+    ".fa-trash"
 ];
+// console.log(debrisArray);
 
-console.log(debrisArray);
+var createDebris = document.createElement("div"[".fa-recycle", ".fa-apple-alt", ".fa-trash"]);
 
 
 

@@ -6,7 +6,7 @@ body {
 h1  {
     font-family: 'Bangers', cursive;
     color: orangered;
-    font-size: 96px;
+    font-size: 8em;
 }
 
 h3 {
@@ -26,6 +26,8 @@ h3 {
     margin: auto;
     font-family: 'Bangers', cursive;
     position: fixed;
+    font-size: 1.3em;
+    opacity: .5;
 }
 
 .game-buttons {
@@ -34,6 +36,7 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    font-size: 1.5em;
 }
 
 .how-to-play {
@@ -50,6 +53,7 @@ h3 {
 .modal-body p {
     text-align: left;
     font-family: 'Bangers', cursive;
+    font-size: 1em;
 }
 
 .play {
@@ -67,7 +71,6 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: center; */
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -99,24 +102,24 @@ h3 {
 }
 
 .compost {
-    margin: auto;
-    width: 100px; 
+    margin: 0 50px 0 50px;
+    width: 120px; 
     height: 150px; 
     border: .5px solid #000;
     background-color: #65ae43;
 }
 
 .trash {
-    margin: auto;
-    width: 100px; 
+    margin: 0 50px 0 50px;
+    width: 120px; 
     height: 150px; 
     border: .5px solid #000;
     background-color: #000;
 }
 
 .recycle {
-    margin: auto;
-    width: 100px; 
+    margin: 0 50px 0 50px;
+    width: 120px; 
     height: 150px; 
     border: .5px solid #000;
     background-color: #316cb0;

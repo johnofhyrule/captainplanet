@@ -75,13 +75,21 @@ function showDebris() {
 
 // function create array of three objects setInterval
 let divs = document.querySelectorAll("i");
-    values = [];
+    debrisArray = [];
 // console.log(divs);
 for(var i = 0; i < divs.length; i++) {
-    values.push(divs[i]);
+    debrisArray.push(divs[i]);
 }
-// console.log(values);
+// console.log(debrisArray);
 
+const fallingDebris = () => {
+    const debrisArray = setInterval(() => {
+        console.log(debrisArray);
+        if(time <= 0){
+        clearInterval(debrisArray);
+        }
+    },1000);
+}
 
 
 // -------- Timer Function -------- //
@@ -111,10 +119,12 @@ const setUpRound = () => {
     $('.squares').empty();
     if(round === 1){
         // createDebris(20);
-        time = 30;
+        time = 10;
     } else {
         // Create banner for player one > player two score
-        $('h3').text(`GAME OVER Player 1: ${score1} #TEAMGRETA Player 2: ${score2} #TEAMTRUMP`);
+        $('#score').text(`GAME OVER`); 
+        $('#player1').text(`Player 1: ${score1} #TEAMGRETA`);
+        $('#player2').text(`Player 2: ${score2} #TEAMTRUMP`);
         $('span').hide();
         // Create banner for player one < player two score
         // $('h3').text(`GAME OVER Player 1: ${score1} #TEAMTRUMP Player 2: ${score2} #TEAMGRETA`);

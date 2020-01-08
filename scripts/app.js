@@ -10,7 +10,7 @@ console.log("This is the way");
 // -------- Event Listners -------- //
 // Event listener to start game (remove banner, show scoreboard, and have debris fall)
 $('#startSorting').on('click',() => {
-    console.log('Game Start');
+    // console.log('Game Start');
     setUpRound();
     setTimer();
 });
@@ -27,7 +27,8 @@ $('.recycle').on('click',() => {
 })
 
 // -------- Game Logic -------- //
-let score = 0;
+let score1 = 0;
+let score2 = 0;
 let time = 0;
 let round = 1;
 
@@ -71,16 +72,15 @@ function showDebris() {
       x.style.display = "none";
     }
   }
+
 // function create array of three objects setInterval
-
-let debrisArray  = [
-    ".fa-recycle",
-    ".fa-apple-alt",
-    ".fa-trash"
-];
-// console.log(debrisArray);
-
-var createDebris = document.createElement("div"[".fa-recycle", ".fa-apple-alt", ".fa-trash"]);
+let divs = document.querySelectorAll("i");
+    values = [];
+// console.log(divs);
+for(var i = 0; i < divs.length; i++) {
+    values.push(divs[i]);
+}
+// console.log(values);
 
 
 
@@ -102,25 +102,23 @@ const updateTime = () => {
     $('#timer').text(`timer: ${time}s`);
 }
 const updateRound = () => {
-    if(round < 4) $('#round').text(`round: ${round}`);
+    if(round < 1) $('#round').text(`round: ${round}`);
 }
 
-// -------- Round Function -------- //
+// -------- Player/Round Function -------- //
 const setUpRound = () => {
     updateRound();
     $('.squares').empty();
     if(round === 1){
         // createDebris(20);
         time = 30;
-    } else if (round === 2){
-        // createDebris(30);
-        time = 30;
-    } else if (round === 3){
-        // createDebris(40);
-        time =30;
     } else {
-        // Create banner for player one and player two score
-        $('h3').text(`GAME OVER score: ${score}`);
+        // Create banner for player one > player two score
+        $('h3').text(`GAME OVER Player 1: ${score1} #TEAMGRETA Player 2: ${score2} #TEAMTRUMP`);
+        $('span').hide();
+        // Create banner for player one < player two score
+        // $('h3').text(`GAME OVER Player 1: ${score1} #TEAMTRUMP Player 2: ${score2} #TEAMGRETA`);
+        // $('span').hide();
     }
 }
 

@@ -1,19 +1,24 @@
-// -------- Core Modules -------- //
-
-// -------- Third Party Libraries -------- //
-
 // -------- Sanity Check -------- //
 console.log("This is the way");
-
-// -------- Constants (variables) -------- //
 
 // -------- Event Listners -------- //
 // Event listener to start game (remove banner, show scoreboard, and have debris fall)
 $('#startSorting').on('click',() => {
-    // console.log('Game Start');
+    console.log('Game Start');
     setUpRound();
     setTimer();
 });
+
+// Event listener for selecting debris
+$('.compostDebris').on('click',() => {
+    console.log('compost de');
+})
+$('.trashDebris').on('click',() => {
+    console.log('trash debris');
+})
+$('.recycleDebris').on('click',() => {
+    console.log('recycle debris');
+})
 
 // Event listener for selecting bins
 $('.compost').on('click',() => {
@@ -60,7 +65,7 @@ function showScoreboard() {
     }
   }
 
-// -------- Hide/Create/Randomize Falling Debris -------- //
+// -------- Hide/Create/Randomize Debris -------- //
 const hideDebris = document.querySelector(".debris").style.display = "none";
     gameStart.addEventListener("click", showDebris);
 
@@ -73,24 +78,41 @@ function showDebris() {
     }
   }
 
-// function create array of three objects setInterval
-let divs = document.querySelectorAll("i");
-    debrisArray = [];
-// console.log(divs);
-for(var i = 0; i < divs.length; i++) {
-    debrisArray.push(divs[i]);
-}
-// console.log(debrisArray);
-
-const fallingDebris = () => {
-    const debrisArray = setInterval(() => {
-        console.log(debrisArray);
-        if(time <= 0){
-        clearInterval(debrisArray);
-        }
-    },1000);
+const createDebris = numberOfDebris => {
+    const $debrisJS = $('.debrisJS');  // loading for reference later
+    for (let i = 1; i < numberOfDebris; i++) {
+        const $debris = $('<div class ="debris"/>')
+        $debrisJS.append($debris); // variable is just sitting there
+    }
 }
 
+const applyRandomDebris = () => {
+    const debris = ['compost', 'trash', 'recycle']
+    const index = Math.floor(Math.random() * debris.length)
+    return debris[index];
+}
+
+const handleDebris = event =>  {
+    if(event.target.classList.contains('poked') === false){
+    const debris = $(event.target).css('background-color');
+    $(event.target).addClass('poked').css('opacity', 0.3);
+    checkValidPoke(color);
+    }
+}
+
+const checkValidPoke = debris => {
+    const debrisValues = color.substring(4, color.length -1).split(', ');
+    console.log(debrisValues[2]);
+    if(debrisValue === "255"){
+        score++
+        $('h3').text(`Scoreboard: ${score}`);
+    } else {
+        score--
+        $('h3').text(`Scoreboard: ${score}`);
+    }
+}
+
+$('.debrisJS').on('click', '.debris', handleDebris);
 
 // -------- Timer Function -------- //
 const setTimer = () => {

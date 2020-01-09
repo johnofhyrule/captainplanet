@@ -35,9 +35,8 @@
                     </div>
                     <div class="modal-body">
                         <p>Captain Planet is a two player game. Player one will play through their gameplay once and then player two will play through their game play once.</p>
-                        <p>Debris will fall from the top and its up to the player to match the debris to the matching bin by clicking on the falling debris then the matching bin.</p>
-                        <p>Three rounds at 30 seconds each round. Increase in falling debris each round.</p>
-                        <p>Round is over when all debris has been sorted or time has run out or three pieces of debris have either been missorted or fallen to the ground.</p>
+                        <p>Random debris will land all over the screen and its up to the player to match the debris to the matching bin by clicking on the debris then the matching bin.</p>
+                        <p>Round is over when all debris has been sorted or time has run out.</p>
                     </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -56,23 +55,17 @@
         <!-- Scoreboard should be opaque when game is in play -->
         <!-- <button onclick="showScoreboard()"></button> -->
         <div id="scoreboard">
-            <h3 id="score">Scoreboard: 0</h3>
-            <h3 id="player1"></h3>
-            <h3 id="player2"></h3>
+            <h2 id="score">Scoreboard: 0</h2>
+            <h2 id="player1"></h2>
+            <h2 id="player2"></h2>
             <span id="timer">Timer: 30s</span>
             <span id="round">Round: 1</span>
         </div>
-    <!-- Debris using Font Awesome -->
+    <!-- Debris -->
     <div class="debris">
-        <div style="color: #316cb0; font-size: 7em;">
-            <i class="fas fa-recycle"></i>
-        </div>
-        <div style="color: #65ae43; font-size: 7em;">
-            <i class="fas fa-apple-alt"></i>
-        </div>
-        <div style="color: #000; font-size: 7em;">
-            <i class="fas fa-trash"></i>
-        </div>
+        <div class="compostDebris"></div>
+        <div class="trashDebris"></div>
+        <div class="recycleDebris"></div>
     </div>
     <!-- Bin containers -->
     <div class="container">

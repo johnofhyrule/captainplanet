@@ -11,7 +11,7 @@ $('#startSorting').on('click',() => {
 
 // Event listener for selecting debris
 $('.compostDebris').on('click',() => {
-    console.log('compost de');
+    console.log('compost debris');
 })
 $('.trashDebris').on('click',() => {
     console.log('trash debris');
@@ -65,54 +65,37 @@ function showScoreboard() {
     }
   }
 
-// -------- Hide/Create/Randomize Debris -------- //
-const hideDebris = document.querySelector(".debris").style.display = "none";
-    gameStart.addEventListener("click", showDebris);
+// -------- Hide/Show Debris -------- //
+// const hideDebris = document.querySelector(".debris").style.display = "none";
+//     gameStart.addEventListener("click", showDebris);
 
-function showDebris() {
-    var x = document.querySelector(".debris");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+// function showDebris() {
+//     var x = document.querySelector(".debris");
+//     if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+//     }
+//   }
 
+// -------- Create Random Debris -------- //
 const createDebris = numberOfDebris => {
-    const $debrisJS = $('.debrisJS');  // loading for reference later
+    let debrisArray = ["compostDebris", "trashDebris", "recycleDebris"];
+    let emptyDebrisArray = [];
+    const $debris = $('.debris'); 
     for (let i = 1; i < numberOfDebris; i++) {
-        const $debris = $('<div class ="debris"/>')
-        $debrisJS.append($debris); // variable is just sitting there
+        randomNum = Math.floor(Math.random() * 3);
+        const $debrisJS = $(`<div class ="${debrisArray[randomNum]}"/>`)
+        emptyDebrisArray.push($debrisJS);
     }
+    $debris.append(emptyDebrisArray );
 }
 
-const applyRandomDebris = () => {
-    const debris = ['compost', 'trash', 'recycle']
+const showRandomDebris = () => {
+    const debris = ['.compostDebris', '.trashDebris', '.recycleDebris']
     const index = Math.floor(Math.random() * debris.length)
     return debris[index];
 }
-
-const handleDebris = event =>  {
-    if(event.target.classList.contains('poked') === false){
-    const debris = $(event.target).css('background-color');
-    $(event.target).addClass('poked').css('opacity', 0.3);
-    checkValidPoke(color);
-    }
-}
-
-const checkValidPoke = debris => {
-    const debrisValues = color.substring(4, color.length -1).split(', ');
-    console.log(debrisValues[2]);
-    if(debrisValue === "255"){
-        score++
-        $('h3').text(`Scoreboard: ${score}`);
-    } else {
-        score--
-        $('h3').text(`Scoreboard: ${score}`);
-    }
-}
-
-$('.debrisJS').on('click', '.debris', handleDebris);
 
 // -------- Timer Function -------- //
 const setTimer = () => {
@@ -123,7 +106,7 @@ const setTimer = () => {
         round++;
         setUpRound();
         if(time > 0) setTimer();
-        }
+        } 
         updateTime();
         time--;
     },1000);
@@ -132,15 +115,18 @@ const updateTime = () => {
     $('#timer').text(`timer: ${time}s`);
 }
 const updateRound = () => {
-    if(round < 1) $('#round').text(`round: ${round}`);
+    if(round < 2) $('#round').text(`round: ${round}`);
 }
 
 // -------- Player/Round Function -------- //
 const setUpRound = () => {
     updateRound();
-    $('.squares').empty();
+    $('.debris').empty();
     if(round === 1){
-        // createDebris(20);
+        createDebris(50);
+        time = 10;
+    } else if (round === 2){
+        createDebris(50);
         time = 10;
     } else {
         // Create banner for player one > player two score

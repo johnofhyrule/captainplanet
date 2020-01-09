@@ -2,7 +2,7 @@
 console.log("This is the way");
 
 // -------- Event Listners -------- //
-// Event listener to start game (remove banner, show scoreboard, and have debris fall)
+// Event listener to start game (remove banner, show scoreboard, and show debris)
 $('#startSorting').on('click',() => {
     console.log('Game Start');
     setUpRound();
@@ -10,13 +10,13 @@ $('#startSorting').on('click',() => {
 });
 
 // Event listener for selecting debris
-$('.compostDebris').on('click',() => {
+$('.debris').on('click', '.compostDebris', () => {
     console.log('compost debris');
 })
-$('.trashDebris').on('click',() => {
+$('.debris').on('click', '.trashDebris', () => {
     console.log('trash debris');
 })
-$('.recycleDebris').on('click',() => {
+$('.debris').on('click', '.recycleDebris', () => {
     console.log('recycle debris');
 })
 
@@ -66,17 +66,17 @@ function showScoreboard() {
   }
 
 // -------- Hide/Show Debris -------- //
-// const hideDebris = document.querySelector(".debris").style.display = "none";
-//     gameStart.addEventListener("click", showDebris);
+const hideDebris = document.querySelector(".debris").style.display = "none";
+    gameStart.addEventListener("click", showDebris);
 
-// function showDebris() {
-//     var x = document.querySelector(".debris");
-//     if (x.style.display === "none") {
-//       x.style.display = "block";
-//     } else {
-//       x.style.display = "none";
-//     }
-//   }
+function showDebris() {
+    var x = document.querySelector(".debris");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
 // -------- Create Random Debris -------- //
 const createDebris = numberOfDebris => {

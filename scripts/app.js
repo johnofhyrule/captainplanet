@@ -4,7 +4,7 @@ console.log("This is the way");
 // -------- Event Listners -------- //
 // Event listener to start game (remove banner, show scoreboard, and show debris)
 $('#startSorting').on('click',() => {
-    console.log('Game Start');
+    // console.log('Game Start');
     setUpRound();
     setTimer();
 });
@@ -14,42 +14,42 @@ var debrisClick;
 var binClick;
 
 $('.debris').on('click', '.compostDebris', () => {
-    console.log('compost debris');
+    // console.log('compost debris');
     debrisClick = 1;
-    console.log(debrisClick);
+    // console.log(debrisClick);
 })
 $('.debris').on('click', '.trashDebris', () => {
-    console.log('trash debris');
+    // console.log('trash debris');
     debrisClick = 2;
-    console.log(debrisClick);
+    // console.log(debrisClick);
 })
 $('.debris').on('click', '.recycleDebris', () => {
-    console.log('recycle debris');
+    // console.log('recycle debris');
     debrisClick = 3;
-    console.log(debrisClick);
+    // console.log(debrisClick);
 })
 
 // Event listener for selecting bins
 $('.compost').on('click',() => {
-    console.log('compost');
+    // console.log('compost');
     binClick = 1;
-    console.log(debrisClick);
+    // console.log(debrisClick);
     debrisCompare();
-    console.log("SCORE: " + score);
+    // console.log("SCORE: " + score);
 })
 $('.trash').on('click',() => {
-    console.log('trash');
+    // console.log('trash');
     binClick = 2;
-    console.log(debrisClick);
+    // console.log(debrisClick);
     debrisCompare();
-    console.log("SCORE: " + score);
+    // console.log("SCORE: " + score);
 })
 $('.recycle').on('click',() => {
-    console.log('recycle');
+    // console.log('recycle');
     binClick = 3;
-    console.log("Debris Click:" + debrisClick);
+    // console.log("Debris Click:" + debrisClick);
     debrisCompare();
-    console.log("SCORE: " + score);
+    // console.log("SCORE: " + score);
 })
 
 // -------- Game Logic -------- //
@@ -69,7 +69,6 @@ function hideBanner() {
     } else {
       x.style.display = "none";
     }
-    //showScoreboard // have to show scoreboard at the same time function is below
   }
 
 // -------- Scoreboard Hidden and Show Scoreboard -------- //
@@ -118,6 +117,9 @@ const showRandomDebris = () => {
 }
 
 // -------- Points -------- //
+// var p1 = playerOne;
+// var p2 = playerTwo;
+
 function debrisCompare() {
     if (debrisClick === binClick) {
        score+= 1
@@ -155,7 +157,7 @@ const updateRound = () => {
 //         $('#player1Score').text(`${score}`)
 //     } else {
 //         $('#player2Score').text(`${score}`)
-//     }
+//     a}
 // }
 
 const updatePlayerScore = () => {
@@ -176,12 +178,9 @@ const setUpRound = () => {
     } else {
         // Create banner for player one > player two score
         $('#score').text(`GAME OVER`); 
-        $('.h2').text(`Player 1: ${score}`);
-        $('.h2').text(`Player 2: ${score}`);
+        $('.h2').text(`Player One: ${score}`);
+        $('.h2').text(`Player Two: ${score}`);
         $('span').hide();
-        // Create banner for player one < player two score
-        // $('h3').text(`GAME OVER Player 1: ${score1} #TEAMTRUMP Player 2: ${score2} #TEAMGRETA`);
-        // $('span').hide();
     }
 }
 

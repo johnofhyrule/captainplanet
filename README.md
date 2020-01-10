@@ -17,17 +17,9 @@ Users will land on the loading screen showing the game title, two buttons, and t
 
 The users will be able to click the How to play button for instructions on how to play. The users will be told that they have to sort three types of debris into the relevant bin for that specific debris. 
 
-When the game has been started the users will be shown a timer, scoreboard, and current round. Earn a point for every debris matched to the correct bin. Three dropped or misplaced debris in a round results in a GAME OVER for that player. Round ends if all debris has been sorted, time has expired or missed three debris.
+When the game has been started the users will be shown a timer, scoreboard, and current round. Earn a point for every debris matched to the correct bin. 
 
 Game Logic
-Debris will fall from the top and user sorts to the correct bin. Rounds will go as follows:
-   
-    Round 1 - 5 debris 1 min
-    Round 2 - 15 debris 1 min
-    Round 3 - 25 debris 1 min
-    Round 4 - 30 debris 1 min
-    Round 5 - 45 debris 1 min
-
 User will click on the debris and click on the correct bin to make a match.
 
 When game has ended the user with the lower score will be shown "TEAM TRUMP" next to their score and the user with the higher score will be shown "TEAM GRETA" next to their score.

@@ -71,7 +71,9 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 7%;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 25%
 }
 
 .compostDebris {

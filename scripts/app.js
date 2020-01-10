@@ -10,30 +10,50 @@ $('#startSorting').on('click',() => {
 });
 
 // Event listener for selecting debris
+var debrisClick;
+var binClick;
+
 $('.debris').on('click', '.compostDebris', () => {
     console.log('compost debris');
+    debrisClick = 1;
+    console.log(debrisClick);
 })
 $('.debris').on('click', '.trashDebris', () => {
     console.log('trash debris');
+    debrisClick = 2;
+    console.log(debrisClick);
 })
 $('.debris').on('click', '.recycleDebris', () => {
     console.log('recycle debris');
+    debrisClick = 3;
+    console.log(debrisClick);
 })
 
 // Event listener for selecting bins
 $('.compost').on('click',() => {
     console.log('compost');
+    binClick = 1;
+    console.log(debrisClick);
+    debrisCompare();
+    console.log("SCORE: " + score);
 })
 $('.trash').on('click',() => {
     console.log('trash');
+    binClick = 2;
+    console.log(debrisClick);
+    debrisCompare();
+    console.log("SCORE: " + score);
 })
 $('.recycle').on('click',() => {
     console.log('recycle');
+    binClick = 3;
+    console.log("Debris Click:" + debrisClick);
+    debrisCompare();
+    console.log("SCORE: " + score);
 })
 
 // -------- Game Logic -------- //
-let score1 = 0;
-let score2 = 0;
+let score = 0;
 let time = 0;
 let round = 1;
 
@@ -97,6 +117,17 @@ const showRandomDebris = () => {
     return debris[index];
 }
 
+// -------- Points -------- //
+function debrisCompare() {
+    if (debrisClick === binClick) {
+       score+= 1
+       $('h2').text(`Score: ${score}`);
+    } else {
+       score--
+       $('h2').text(`Score: ${score}`);
+    }
+}
+
 // -------- Timer Function -------- //
 const setTimer = () => {
     const timer = setInterval(() => {
@@ -113,15 +144,29 @@ const setTimer = () => {
 }
 const updateTime = () => {
     $('#timer').text(`timer: ${time}s`);
+    updatePlayerScore();
 }
 const updateRound = () => {
     if(round < 2) $('#round').text(`round: ${round}`);
+}
+
+// const updatePlayerScore = () => {
+//     if (round = 1) {
+//         $('#player1Score').text(`${score}`)
+//     } else {
+//         $('#player2Score').text(`${score}`)
+//     }
+// }
+
+const updatePlayerScore = () => {
+    $('#player1Score').text(`${score}`)
 }
 
 // -------- Player/Round Function -------- //
 const setUpRound = () => {
     updateRound();
     $('.debris').empty();
+    $('.score').empty();
     if(round === 1){
         createDebris(50);
         time = 10;
@@ -131,8 +176,8 @@ const setUpRound = () => {
     } else {
         // Create banner for player one > player two score
         $('#score').text(`GAME OVER`); 
-        $('#player1').text(`Player 1: ${score1} #TEAMGRETA`);
-        $('#player2').text(`Player 2: ${score2} #TEAMTRUMP`);
+        $('.h2').text(`Player 1: ${score}`);
+        $('.h2').text(`Player 2: ${score}`);
         $('span').hide();
         // Create banner for player one < player two score
         // $('h3').text(`GAME OVER Player 1: ${score1} #TEAMTRUMP Player 2: ${score2} #TEAMGRETA`);

@@ -25,7 +25,7 @@ h3 {
     justify-content: center;
     margin: auto;
     font-family: 'Bangers', cursive;
-    position: fixed;
+    /* position: fixed; */
     font-size: 1.3em;
     opacity: .8;
 }
@@ -71,6 +71,7 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 7%;
 }
 
 .compostDebris {

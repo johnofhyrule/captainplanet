@@ -72,14 +72,15 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 25%
+    margin-left: 20%;
+    margin-right: 20%
 }
 
 .compostDebris {
     width: 50px;
     height: 50px;
     background: #65ae43;
+    margin: 4px 4px 4px 4px;
 }
 
 .trashDebris {
@@ -87,6 +88,7 @@ h3 {
     height: 50px;
     background: #000;
     border-radius: 50%;
+    margin: 4px 4px 4px 4px;
 }
 
 .recycleDebris {
@@ -95,6 +97,7 @@ h3 {
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-top: 50px solid #316cb0;
+    margin: 4px 4px 4px 4px;
   }
 
 .container {

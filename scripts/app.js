@@ -170,10 +170,10 @@ const setUpRound = () => {
     $('.debris').empty();
     $('.score').empty();
     if(round === 1){
-        createDebris(50);
+        createDebris(75);
         time = 10;
     } else if (round === 2){
-        createDebris(50);
+        createDebris(100);
         time = 10;
     } else {
         // Create banner for player one > player two score

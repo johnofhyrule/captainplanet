@@ -146,7 +146,7 @@ const setTimer = () => {
 }
 const updateTime = () => {
     $('#timer').text(`timer: ${time}s`);
-    updatePlayerScore();
+    // updatePlayerScore();
 }
 const updateRound = () => {
     if(round < 2) $('#round').text(`round: ${round}`);
@@ -160,9 +160,9 @@ const updateRound = () => {
 //     a}
 // }
 
-const updatePlayerScore = () => {
-    $('#player1Score').text(`${score}`)
-}
+// const updatePlayerScore = () => {
+//     $('#player1Score').text(`${score}`)
+// }
 
 // -------- Player/Round Function -------- //
 const setUpRound = () => {
@@ -177,9 +177,9 @@ const setUpRound = () => {
         time = 10;
     } else {
         // Create banner for player one > player two score
-        $('#score').text(`GAME OVER`); 
-        $('.h2').text(`Player One: ${score}`);
-        $('.h2').text(`Player Two: ${score}`);
+        $('#score').text(`GAME OVER: Score ${score}`); 
+        // $('.h2').text(`Player One: ${score}`);
+        // $('.h2').text(`Player Two: ${score}`);
         $('span').hide();
     }
 }

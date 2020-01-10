@@ -27,7 +27,6 @@ h3 {
     font-family: 'Bangers', cursive;
     /* position: fixed; */
     font-size: 1.3em;
-    opacity: .8;
 }
 
 .game-buttons {
@@ -64,6 +63,7 @@ h3 {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+
 }
 
 .debris {

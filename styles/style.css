@@ -9,6 +9,10 @@ h1  {
     font-size: 8em;
 }
 
+h2 {
+    font-size: 1.8em;
+}
+
 h3 {
     display: flex;
     justify-content: right;
@@ -26,7 +30,7 @@ h3 {
     margin: auto;
     font-family: 'Bangers', cursive;
     /* position: fixed; */
-    font-size: 1.8em;
+    font-size: 2.5em;
 }
 
 .game-buttons {

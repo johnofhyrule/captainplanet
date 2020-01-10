@@ -45,13 +45,13 @@ Are you having trouble with sorting your debris? Shoot me an email, and I'll fix
 
 **Goals**
 
-Complete basic layouts/structure
-Complete modal/scoreboard
-Complete falling debris
-Complete time, score, and round
+    -Complete basic layouts/structure
+    -Complete modal/scoreboard
+    -Complete falling debris
+    -Complete time, score, and round
 
 
 **Stretch goals**
 
-Music (clicks on trash or bin, success)
-Animation (spin the debris as it falls)
+    -Music (clicks on trash or bin, success)
+    -Animation (spin the debris as it falls)

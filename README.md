@@ -13,7 +13,7 @@ Users will land on the loading screen showing the game title, two buttons, and t
     - Recycle bin (blue)
 
 
-[Home Screen](img/home_screen.png)
+![Home Screen](img/home_screen.png)
 
 
 The users will be able to click the How to play button for instructions on how to play. The users will be told that they have to sort three types of debris into the relevant bin for that specific debris. 
@@ -22,7 +22,7 @@ The users will be able to click the How to play button for instructions on how t
 When the game has been started the users will be shown a timer, scoreboard, and current round. Earn a point for every debris matched to the correct bin. 
 
 
-[Game Play](img/gameplay.png)
+![Game Play](img/gameplay.png)
 
 
 **Game Logic**
@@ -32,7 +32,7 @@ User will click on the debris and click on the correct bin to make a match.
 When game has ended the user with the lower score will be shown "TEAM TRUMP" next to their score and the user with the higher score will be shown "TEAM GRETA" next to their score.
 
 
-[Final Score](img/final_score.png)
+![Final Score](img/final_score.png)
 
 
 **Support**

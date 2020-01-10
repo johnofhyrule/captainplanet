@@ -149,7 +149,7 @@ const updateTime = () => {
     // updatePlayerScore();
 }
 const updateRound = () => {
-    if(round < 2) $('#round').text(`round: ${round}`);
+    if(round < 3) $('#round').text(`round: ${round}`);
 }
 
 // const updatePlayerScore = () => {
@@ -157,7 +157,7 @@ const updateRound = () => {
 //         $('#player1Score').text(`${score}`)
 //     } else {
 //         $('#player2Score').text(`${score}`)
-//     a}
+//     }
 // }
 
 // const updatePlayerScore = () => {
@@ -168,19 +168,25 @@ const updateRound = () => {
 const setUpRound = () => {
     updateRound();
     $('.debris').empty();
-    $('.score').empty();
-    if(round === 1){
+    // $('.score').empty();
+    if(round === 1) {
         createDebris(75);
-        time = 10;
-    } else if (round === 2){
+        time = 15;
+    } else if (round === 2) {
         createDebris(100);
-        time = 10;
+        time = 15;
     } else {
         // Create banner for player one > player two score
-        $('#score').text(`GAME OVER: Score ${score}`); 
+        if(score > 15) {
+            $('#score').text(`GAME OVER: Score ${score} #TEAMGRETA`); 
+            $('span').hide();
+        } else {
+            $('#score').text(`GAME OVER: Score ${score} #TEAMTRUMP`); 
+            $('span').hide();
+        }
         // $('.h2').text(`Player One: ${score}`);
         // $('.h2').text(`Player Two: ${score}`);
-        $('span').hide();
+        // $('span').hide();
     }
 }
 

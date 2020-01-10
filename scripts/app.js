@@ -116,6 +116,17 @@ const showRandomDebris = () => {
     return debris[index];
 }
 
+const handlePoke = event =>  {
+    if (event.target.classList.contains('poked') === false) {
+    const debrisChange = $(event.target).css('background');
+    $(event.target).addClass('poked').css('opacity', 0.2);
+    checkValidPoke(debrisChange);
+    }
+}
+
+$('.debris').on('click', '.compostDebris', handlePoke);
+$('.debris').on('click', '.recycleDebris', handlePoke);
+$('.debris').on('click', '.trashDebris', handlePoke);
 // -------- Points -------- //
 // var p1 = playerOne;
 // var p2 = playerTwo;
